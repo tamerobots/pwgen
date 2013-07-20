@@ -24,38 +24,32 @@
 
       <div class="generate-main">
         <h1 class="password-display">Password Here</h1>
-        <p class="click-to-copy">Click the password to copy to clipboard</p>
+        <p class="click-to-copy">Click the password to copy to clipboard TODO</p>
         <a class="btn btn-large btn-generate" href="#">Generate!</a>
       </div>
 
       <hr>
-<!-- 
-      <div class="row-fluid marketing">
-        <div class="span6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+      <form id="options-form" action="#">
+      <div class="options">
+        <div class="col-1">
+          <p><input type="checkbox" name="uppercase" id="uppercase" >Enable Uppercase Letters</input></p>
 
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+          <p><input type="checkbox" name="symbols" id="symbols" >Enable Symbols</input></p>
 
-          <h4>Subheading</h4>
           <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
         </div>
 
-        <div class="span6">
-          <h4>Subheading</h4>
+        <div class="col-2">
           <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
 
-          <h4>Subheading</h4>
           <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
 
-          <h4>Subheading</h4>
           <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
         </div>
       </div>
+    </form>
 
       <hr>
--->
       <div class="footer">
         <div class="footer-links">links to other places in site and other stuff go here</div>
         <div class="footer-disclaimer">This is where disclaimer goes.</div>

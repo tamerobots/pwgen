@@ -343,8 +343,7 @@ blockquote {
 
 
 /* main page width */
-.container-narrow {
-    width: 950px;
+.container-narrow {    
     margin: 0 auto;
         
 }
