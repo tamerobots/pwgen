@@ -340,3 +340,54 @@ blockquote {
     font: italic 110%/130% "Times New Roman", Times, serif;
     padding: 8px 30px 15px;
 }
+
+
+/* main page width */
+.container-narrow {
+    width: 950px;
+    margin: 0 auto;
+        
+}
+.generate-main{
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Button*/
+
+a.btn-generate {
+    font-size: 21px;
+    padding: 15px 19px;
+    background-color: #5BB75B;
+    background-image: linear-gradient(to bottom, #62C462, #51A351);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 6px 6px 6px 6px;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    font-color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 20px;
+    margin-bottom: 0;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(150, 150, 150, 0.75);
+    vertical-align: middle;
+    
+}
+
+a.btn-generate:hover {
+    text-decoration: none;
+    background-image: linear-gradient(to bottom, #51A351, #62C462 );
+}
+a.btn-generate:visited{
+    /*font-color: #FFFFFF;*/
+    color:#FFFFFF;
+}

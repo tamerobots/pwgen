@@ -22,14 +22,14 @@
 
       <hr>
 
-      <div class="jumbotron">
-        <h1>Password Here</h1>
-        <p class="click-to-copy">Click to Copy</p>
-        <a class="btn btn-large btn-success" href="#">Generate!</a>
+      <div class="generate-main">
+        <h1 class="password-display">Password Here</h1>
+        <p class="click-to-copy">Click to copy to clipboard</p>
+        <a class="btn btn-large btn-generate" href="#">Generate!</a>
       </div>
 
       <hr>
-
+<!-- 
       <div class="row-fluid marketing">
         <div class="span6">
           <h4>Subheading</h4>
@@ -55,16 +55,18 @@
       </div>
 
       <hr>
-
+-->
       <div class="footer">
-        <div class="footer-links">&copy; Company 2013</div>
-        <div class="footer-discalimer"></div>
+        <div class="footer-links">links to other places in site and other stuff go here</div>
+        <div class="footer-disclaimer">This is where disclaimer goes.</div>
       </div>
 
     </div> <!-- /container -->
 
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="js/pwgen.js"></script>
     
   </body>
 </html>
