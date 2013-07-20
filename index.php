@@ -24,7 +24,7 @@
 
       <div class="generate-main">
         <h1 class="password-display">Password Here</h1>
-        <p class="click-to-copy">Click to copy to clipboard</p>
+        <p class="click-to-copy">Click the password to copy to clipboard</p>
         <a class="btn btn-large btn-generate" href="#">Generate!</a>
       </div>
 
