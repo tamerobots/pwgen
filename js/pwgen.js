@@ -15,7 +15,8 @@ function setCharAt(str,index,char) {
 This injects characters according to the options selected
 ===================================================================== */
 function injectCharacters(password, characters){
-	var numberCharsRequired = Math.floor(password.length) / 3 //Make it so a third of the characters are overwritten
+	var randomSeed = (Math.floor(Math.random() * 3)) + 2; //Randomise the number of characters that will be overwritten. Minimum 2, maximum 4. I told you this would be random..
+	var numberCharsRequired = Math.floor(password.length) / randomSeed //Make it so a third of the characters are overwritten
 	var x=0;	
 	while ( x < numberCharsRequired){
 		var chosenPosition = (Math.floor(Math.random() * password.length)); // decide where in the password to inject the new char
@@ -34,14 +35,25 @@ Password Generation Function
 
 	function GeneratePassword(){
 		var newPassword = "";
-		var chosenLength = 10; //Default to 10 chars
-		var possibleLetters = "abcdefghijkmnpqrstuvwxyz"; // leave 'o and l out as they look the same as 1 and 0
-		var possibleNumbers = "123456789"; //Don't include 0, it looks the same as o or O
-		var possibleCharacters = possibleLetters + possibleNumbers; //Default to just using letters and numbers
-		//Generate the starter password, then replace individual characters if they decide to later.
+		var chosenLength = 10; //Default to 10 chars		
+		var possibleCharacters = "abcdefghijkmnpqrstuvwxyz"; // leave 'o and l out as they look the same as 1 and 0				
+		//find the chosen length if they've entered one.
+		if ($("#length").val().length != 0){
+			var typedLength = parseInt($("#length").val());			
+			if (Math.floor(typedLength) == typedLength){
+				//it's an integer, so accept it.
+				chosenLength = typedLength;
+			}
+		}
+
+		//Generate the starter password, then replace individual characters if they decide to later.		
 		for( var i=0; i < chosenLength; i++ ){
         	newPassword += possibleCharacters.charAt(Math.floor(Math.random() * possibleCharacters.length));
     	}
+    	//Add some numbers
+    	var possibleNumbers = "123456789"; //Don't include 0, it looks the same as o or O
+    	newPassword = injectCharacters(newPassword, possibleNumbers);
+
 		// var randomnumber=Math.floor(Math.random()*11);
 		//Check options boxes		
 		if ($("#uppercase").prop('checked')){
@@ -62,6 +74,15 @@ Password Generation Function
 		passwordDisplay.text(newPassword); //display the password to the user!
 	}	
 
+	function showHideOptions(){
+		var optionsDiv = $("div.options");
+		if ($("div.options").is(":visible")){
+			optionsDiv.hide();
+		} else {
+			optionsDiv.show();
+		}
+	}
+
 /* =====================================================================
 Hooking up function to frontend
 ===================================================================== */
@@ -69,8 +90,10 @@ Hooking up function to frontend
 
 	var passwordDisplay = $("h1.password-display"); //This is where the password is output to the user
 	var btnGenerate = $("a.btn-generate");
+	var btnShowHideOptions = $("p.options-link a");
 	GeneratePassword(); //run it by default the first time
     btnGenerate.on('click', GeneratePassword);
+    btnShowHideOptions.on('click', showHideOptions);
 
 
 }) /* EOF */

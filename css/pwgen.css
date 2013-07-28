@@ -345,11 +345,12 @@ blockquote {
 /* main page width */
 .container-narrow {    
     margin: 0 auto;
-        
+    width: 65em;
 }
 .generate-main{
     text-align: center;
-    margin: 10px 0;
+    margin: 0 auto;
+    padding: 10px 10px 0px 10px;
 }
 
 /* Button*/
@@ -389,4 +390,18 @@ a.btn-generate:hover {
 a.btn-generate:visited{
     /*font-color: #FFFFFF;*/
     color:#FFFFFF;
+}
+
+p.options-link{
+    padding-top: 40px;
+}
+.options-arrow{
+    width:37px;
+    height:11px;
+}
+.options-arrow-down{
+    background: url("../img/greydown.png") no-repeat scroll right 1em transparent;
+}
+.options-arrow-up{
+    background: url("../img/greyup.png") no-repeat scroll right 1em transparent;
 }
