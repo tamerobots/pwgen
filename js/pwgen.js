@@ -77,9 +77,9 @@ Password Generation Function
 	function showHideOptions(){
 		var optionsDiv = $("div.options");
 		if ($("div.options").is(":visible")){
-			optionsDiv.hide();
+			optionsDiv.slideUp();
 		} else {
-			optionsDiv.show();
+			optionsDiv.slideDown();
 		}
 	}
 
