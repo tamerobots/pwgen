@@ -76,10 +76,16 @@ Password Generation Function
 
 	function showHideOptions(){
 		var optionsDiv = $("div.options");
+		var optionsLink = $("a.options-arrow");
 		if ($("div.options").is(":visible")){
 			optionsDiv.slideUp();
+			optionsLink.removeClass("options-arrow-up");
+			optionsLink.addClass("options-arrow-down");
+			
 		} else {
 			optionsDiv.slideDown();
+			optionsLink.removeClass("options-arrow-down");
+			optionsLink.addClass("options-arrow-up");
 		}
 	}
 

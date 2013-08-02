@@ -324,9 +324,6 @@ a {
     text-decoration: none;
     outline: none;
 }
-a:hover {
-    text-decoration: underline;
-}
 p {
     font-family: 'Lato', sans-serif;
     font-size: 110%;
@@ -387,7 +384,7 @@ a.btn-generate {
 
 a.btn-generate:hover {
     text-decoration: none;
-    background-image: linear-gradient(to bottom, #51A351, #62C462 );
+    background-image: linear-gradient(to bottom, #51A351, #62C462 );    
 }
 a.btn-generate:visited{
     /*font-color: #FFFFFF;*/
@@ -399,17 +396,28 @@ a.btn-generate::selection {
 a.btn-generate::-moz-selection {
     background: none;
 }
+a.btn-generate::-webkit-selection {
+    background: none;
+}
 
 p.options-link{
     padding-top: 40px;
 }
-.options-arrow{
-    width:37px;
-    height:11px;
+.options-link a{
+    padding: 0px 40px 0px 15px;
+    font-size: 150%;
+    text-decoration: none;
+}
+.options-link a:hover{
+    color: #419D43;
 }
 .options-arrow-down{
-    background: url("../img/greydown.png") no-repeat scroll right 1em transparent;
+    background: url("../img/greydown.png") no-repeat scroll right 9px transparent;
 }
 .options-arrow-up{
-    background: url("../img/greyup.png") no-repeat scroll right 1em transparent;
+    background: url("../img/greyup.png") no-repeat scroll right 9px transparent;
+}
+
+div.options{
+    display:none; /* Start with the options div NOT open.*/
 }

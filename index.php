@@ -26,7 +26,7 @@
         <h1 class="password-display">Password Here</h1>
         <p class="click-to-copy">Click the password to copy to clipboard TODO</p>
         <a class="btn btn-large btn-generate">Generate!</a>
-        <p class="options-link"><a>Options <span class="options-arrow options-arrow-down">asdf</span></a></p>
+        <p class="options-link"><a class="options-arrow options-arrow-down">Options</a></p>
       </div>
 
       <hr>
