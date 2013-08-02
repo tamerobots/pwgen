@@ -46,13 +46,13 @@ body
 
 ::-moz-selection
 {
-    background: #93b2c2;
+   background: #93b2c2;
     color: #fff;
     text-shadow: none;
 }
 ::selection
 {
-    background: #93b2c2;
+    background: #93b2c2; 
     color: #fff;
     text-shadow: none;
 }
@@ -310,7 +310,7 @@ td
 
 
 /*===================================================================================================
-END OF BOILERPLATE HTML
+END OF BOILERPLATE CSS
 ===================================================================================================*/
 
 body {
@@ -345,12 +345,14 @@ blockquote {
 /* main page width */
 .container-narrow {    
     margin: 0 auto;
-    width: 65em;
+    width: 80%;
 }
 .generate-main{
     text-align: center;
     margin: 0 auto;
     padding: 10px 10px 0px 10px;
+    width:65%;
+    display:block;
 }
 
 /* Button*/
@@ -390,6 +392,12 @@ a.btn-generate:hover {
 a.btn-generate:visited{
     /*font-color: #FFFFFF;*/
     color:#FFFFFF;
+}
+a.btn-generate::selection {
+    background: none;
+}
+a.btn-generate::-moz-selection {
+    background: none;
 }
 
 p.options-link{
