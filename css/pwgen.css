@@ -338,6 +338,9 @@ blockquote {
     padding: 8px 30px 15px;
 }
 
+h1.muted{
+    font-size:160%;
+}
 
 /* main page width */
 .container-narrow {    

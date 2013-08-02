@@ -17,13 +17,13 @@
     <div class="container-narrow">
 
       <div class="masthead">
-        <h3 class="muted">Password Generator</h3>
+        <h1 class="muted">Password Generator</h1>
       </div>
 
       <hr>
 
       <div class="generate-main">
-        <h1 class="password-display">Password Here</h1>
+        <h1 id="password-display" class="password-display">Password Here</h1>
         <p class="click-to-copy">Click the password to copy to clipboard TODO</p>
         <a class="btn btn-large btn-generate">Generate!</a>
         <p class="options-link"><a class="options-arrow options-arrow-down">Options</a></p>
@@ -34,9 +34,9 @@
       
       <div class="options">
         <form id="options-form" >
-          <p><input type="checkbox" name="uppercase" id="uppercase" > Enable Uppercase Letters</input></p>
+          <p><input type="checkbox" name="uppercase" id="uppercase" ><label for="uppercase">Enable Uppercase Letters</label></input></p>
 
-          <p><input type="checkbox" name="symbols" id="symbols" > Enable Symbols</input></p>
+          <p><input type="checkbox" name="symbols" id="symbols" ><label for="symbols">Enable Symbols</label></input></p>
 
           <!-- <p><input type="text" name="length" id="length" value="10">Length</input></p> -->
           <p>
@@ -46,9 +46,9 @@
                 <option value="9">9</option>
               </optgroup>
               <optgroup label="Recommended Length">
-                <option value="10" selected="selected">10</option>              
+                <option value="10" >10</option>              
                 <option value="11">11</option>
-                <option value="12">12</option>
+                <option value="12" selected="selected">12</option>
                 <option value="13">13</option>
                 <option value="14">14</option>
                 <option value="15">15</option>
@@ -59,7 +59,7 @@
                 <option value="20">20</option>
               </optgroup>
             </select>
-            Password Length            
+            <label for="length">Password Length</label>
           </p>
           <p>
             Box for copying short url with querystring parameters here.

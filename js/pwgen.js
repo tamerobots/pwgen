@@ -1,6 +1,28 @@
 /* =====================================================================
 Password Generator by tamerobots.com. 
 ===================================================================== */
+
+//Javascript to be able to select text easy - note this is not JQuery.
+function SelectText(element) {
+    var doc = document
+        , text = doc.getElementById(element)
+        , range, selection
+    ;    
+    if (doc.body.createTextRange) {
+        range = document.body.createTextRange();
+        range.moveToElementText(text);
+        range.select();
+    } else if (window.getSelection) {
+        selection = window.getSelection();        
+        range = document.createRange();
+        range.selectNodeContents(text);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
+}
+
+/* JQUERY STARTS HERE AND CONTINUES TO END ---------------------------------------------------------------------------------------------- */
+
 jQuery(function($){    
 
 /*-----------------------------------------------------------------
@@ -68,12 +90,15 @@ Password Generation Function
 		}
 
 
-		
-		
+
+
 
 		passwordDisplay.text(newPassword); //display the password to the user!
 	}	
 
+/*-----------------------------------------------------------------
+*  Show or Hide the 'Options' Panel
+* ----------------------------------------------------------------*/
 	function showHideOptions(){
 		var optionsDiv = $("div.options");
 		var optionsLink = $("a.options-arrow");
@@ -89,6 +114,14 @@ Password Generation Function
 		}
 	}
 
+/*-----------------------------------------------------------------
+*  Make it so when someone clicks on the password, it selects it.
+*
+*
+* ----------------------------------------------------------------*/
+ $('h1.password-display').click(function() {
+        SelectText('password-display');
+    });
 /* =====================================================================
 Hooking up function to frontend
 ===================================================================== */
