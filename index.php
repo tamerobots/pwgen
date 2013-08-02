@@ -78,9 +78,11 @@
     </div> <!-- /container -->
 
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery-1.8.3.js"></script>
-    <script src="js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script src="js/pwgen.js"></script>
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript" src="ZeroClipboard-1.1.7/ZeroClipboard.js"></script>
+    <script type="text/javascript" src="js/pwgen.js"></script>
+
     
   </body>
 </html>

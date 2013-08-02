@@ -122,6 +122,17 @@ Password Generation Function
  $('h1.password-display').click(function() {
         SelectText('password-display');
     });
+
+/*-----------------------------------------------------------------
+*  Configure 'Copy to Clipboard' functionality. 
+* Uses zeroclipboard: http://zeroclipboard.github.io/ZeroClipboard/
+*
+* ----------------------------------------------------------------*/
+
+ZeroClipboard.setDefaults( { moviePath: 'ZeroClipboard-1.1.7/ZeroClipboard.swf' } );
+var clip = new ZeroClipboard();
+
+
 /* =====================================================================
 Hooking up function to frontend
 ===================================================================== */
