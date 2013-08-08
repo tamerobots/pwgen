@@ -50,6 +50,15 @@ function injectCharacters(password, characters){
     return password;
 }
 
+/*-----------------------------------------------------------------
+*  This checks for a $_GET parameter in the URL.
+* ----------------------------------------------------------------*/
+
+function getURLParameter(name) {
+    return decodeURI(
+        (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
+    );
+}
 
 /* =====================================================================
 Password Generation Function
@@ -57,14 +66,50 @@ Password Generation Function
 
     function GeneratePassword(){
         var newPassword = "";
-        var chosenLength = 10; //Default to 10 chars        
+        var chosenLength = 10; //Default to 10 chars                
         var possibleCharacters = "abcdefghijkmnpqrstuvwxyz"; // leave 'o and l out as they look the same as 1 and 0             
+
+        //Get potential parameters from URL, if this is the first time this is running----------------
+        if (useGETParameters){
+           //chosen Length first
+            var chosenLengthGET = getURLParameter("chosenLength");
+            if (chosenLengthGET){
+                chosenLengthGET = parseInt(chosenLengthGET);
+                if (Math.floor(chosenLengthGET) == chosenLengthGET){
+                    //it's an integer, so accept it.
+                    chosenLength = chosenLengthGET;
+                    $("#length").val(chosenLengthGET); //set the length from GET parameter
+                }
+            }         
+
+            var uppercaseGET = getURLParameter("uppercase");
+            if (uppercaseGET){
+                uppercaseGET = parseInt(uppercaseGET);
+                if (Math.floor(uppercaseGET) == uppercaseGET){
+                    if (uppercaseGET == 1){
+                        $("#uppercase").attr('checked', 'checked');
+                    }
+                }
+            }
+
+            var symbolsGET = getURLParameter("symbols");
+            if (symbolsGET){
+                symbolsGET = parseInt(symbolsGET);
+                if (Math.floor(symbolsGET) == symbolsGET){
+                    if (symbolsGET == 1){
+                        $("#symbols").attr('checked', 'checked');
+                    }
+                }
+            }
+
+        }  //End testing of GET params --------------------------------------------------
+
         //find the chosen length if they've entered one.
         if ($("#length").val().length != 0){
-            var typedLength = parseInt($("#length").val());         
-            if (Math.floor(typedLength) == typedLength){
+            var selectedLength = parseInt($("#length").val());         
+            if (Math.floor(selectedLength) == selectedLength){
                 //it's an integer, so accept it.
-                chosenLength = typedLength;
+                chosenLength = selectedLength;
             }
         }
 
@@ -90,9 +135,7 @@ Password Generation Function
         }
 
 
-
-
-
+        
         passwordDisplay.text(newPassword); //display the password to the user!
         passwordDisplay.css("color", "#666666");
         //Change the data-clipboard-text to the new password so ZeroClipboard can pick it up.
@@ -100,6 +143,8 @@ Password Generation Function
 
         clickToCopyP.text("Click the password to copy to clipboard.");
         clickToCopyP.removeClass("copied");        
+        //Set this here, so that after the first time generatepassword is run, it never tries to find get params again.
+        useGETParameters = false; 
     }   
 
 /*-----------------------------------------------------------------
@@ -153,6 +198,9 @@ Hooking up function to frontend
     var btnGenerate = $("a.btn-generate");
     var btnShowHideOptions = $("p.options-link a");
     var clickToCopyP = $("p.click-to-copy");
+    //Only use GET parameters the first time you load page (i.e. first time you run), then the user can override these
+    //in 'options' panel.
+    var useGETParameters = true; 
     GeneratePassword(); //run it by default the first time
     btnGenerate.on('click', GeneratePassword);
     btnShowHideOptions.on('click', showHideOptions);
