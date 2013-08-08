@@ -94,6 +94,12 @@ Password Generation Function
 
 
 		passwordDisplay.text(newPassword); //display the password to the user!
+        passwordDisplay.css("color", "#666666");
+        //Change the data-clipboard-text to the new password so ZeroClipboard can pick it up.
+        passwordDisplay.attr('data-clipboard-text', newPassword); 
+        
+        clickToCopyP.text("Click to copy to clipboard.");
+        clickToCopyP.removeClass("copied");        
 	}	
 
 /*-----------------------------------------------------------------
@@ -116,20 +122,37 @@ Password Generation Function
 
 /*-----------------------------------------------------------------
 *  Make it so when someone clicks on the password, it selects it.
-*
-*
 * ----------------------------------------------------------------*/
  $('h1.password-display').click(function() {
         SelectText('password-display');
     });
+
+/*-----------------------------------------------------------------
+*  Configure 'Copy to Clipboard' functionality. 
+* Uses zeroclipboard: http://zeroclipboard.github.io/ZeroClipboard/
+* ----------------------------------------------------------------*/
+
+var clip = new ZeroClipboard( document.getElementById("password-display"), {
+  moviePath:"ZeroClipboard/ZeroClipboard.swf",
+  allowScriptAccess: "sameDomain"
+} );
+
+clip.on( 'complete', function(client, args) {
+        passwordDisplay.animate({color: '#5BB75B'}, 100);
+        passwordDisplay.animate({color: '#93B2C2'}, 100);
+        clickToCopyP.text("Copied.");
+        clickToCopyP.addClass("copied");
+    }  
+);
+
 /* =====================================================================
 Hooking up function to frontend
 ===================================================================== */
 
-
 	var passwordDisplay = $("h1.password-display"); //This is where the password is output to the user
 	var btnGenerate = $("a.btn-generate");
 	var btnShowHideOptions = $("p.options-link a");
+    var clickToCopyP = $("p.click-to-copy");
 	GeneratePassword(); //run it by default the first time
     btnGenerate.on('click', GeneratePassword);
     btnShowHideOptions.on('click', showHideOptions);

@@ -355,6 +355,10 @@ h1.muted{
     display:block;
 }
 
+p.copied{
+font-style:italic;
+}
+
 /* Button*/
 
 a.btn-generate {

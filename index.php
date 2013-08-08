@@ -23,8 +23,8 @@
       <hr>
 
       <div class="generate-main">
-        <h1 id="password-display" class="password-display">Password Here</h1>
-        <p class="click-to-copy">Click the password to copy to clipboard TODO</p>
+        <h1 id="password-display" data-clipboard-text="Copy me" class="password-display">Password Here</h1>
+        <p class="click-to-copy">Click the password to copy to clipboard.</p>
         <a class="btn btn-large btn-generate">Generate!</a>
         <p class="options-link"><a class="options-arrow options-arrow-down">Options</a></p>
       </div>
@@ -78,9 +78,11 @@
     </div> <!-- /container -->
 
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery-1.8.3.js"></script>
-    <script src="js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script src="js/pwgen.js"></script>
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript" src="ZeroClipboard/ZeroClipboard.js"></script>
+    <script type="text/javascript" src="js/pwgen.js"></script>
+
     
   </body>
 </html>
