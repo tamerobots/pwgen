@@ -37,17 +37,17 @@ function setCharAt(str,index,char) {
 This injects characters according to the options selected
 ===================================================================== */
 function injectCharacters(password, characters){
-	var randomSeed = (Math.floor(Math.random() * 3)) + 2; //Randomise the number of characters that will be overwritten. Minimum 2, maximum 4. I told you this would be random..
-	var numberCharsRequired = Math.floor(password.length) / randomSeed //Make it so a third of the characters are overwritten
-	var x=0;	
-	while ( x < numberCharsRequired){
-		var chosenPosition = (Math.floor(Math.random() * password.length)); // decide where in the password to inject the new char
-		var replacementChar = characters.charAt(Math.floor(Math.random() * characters.length)); //pick a random character to replace
-		password = setCharAt(password, chosenPosition, replacementChar);
-		x++;
-	}
+    var randomSeed = (Math.floor(Math.random() * 3)) + 2; //Randomise the number of characters that will be overwritten. Minimum 2, maximum 4. I told you this would be random..
+    var numberCharsRequired = Math.floor(password.length) / randomSeed //Make it so a third of the characters are overwritten
+    var x=0;    
+    while ( x < numberCharsRequired){
+        var chosenPosition = (Math.floor(Math.random() * password.length)); // decide where in the password to inject the new char
+        var replacementChar = characters.charAt(Math.floor(Math.random() * characters.length)); //pick a random character to replace
+        password = setCharAt(password, chosenPosition, replacementChar);
+        x++;
+    }
 
-	return password;
+    return password;
 }
 
 
@@ -55,70 +55,70 @@ function injectCharacters(password, characters){
 Password Generation Function
 ===================================================================== */
 
-	function GeneratePassword(){
-		var newPassword = "";
-		var chosenLength = 10; //Default to 10 chars		
-		var possibleCharacters = "abcdefghijkmnpqrstuvwxyz"; // leave 'o and l out as they look the same as 1 and 0				
-		//find the chosen length if they've entered one.
-		if ($("#length").val().length != 0){
-			var typedLength = parseInt($("#length").val());			
-			if (Math.floor(typedLength) == typedLength){
-				//it's an integer, so accept it.
-				chosenLength = typedLength;
-			}
-		}
+    function GeneratePassword(){
+        var newPassword = "";
+        var chosenLength = 10; //Default to 10 chars        
+        var possibleCharacters = "abcdefghijkmnpqrstuvwxyz"; // leave 'o and l out as they look the same as 1 and 0             
+        //find the chosen length if they've entered one.
+        if ($("#length").val().length != 0){
+            var typedLength = parseInt($("#length").val());         
+            if (Math.floor(typedLength) == typedLength){
+                //it's an integer, so accept it.
+                chosenLength = typedLength;
+            }
+        }
 
-		//Generate the starter password, then replace individual characters if they decide to later.		
-		for( var i=0; i < chosenLength; i++ ){
-        	newPassword += possibleCharacters.charAt(Math.floor(Math.random() * possibleCharacters.length));
-    	}
-    	//Add some numbers
-    	var possibleNumbers = "123456789"; //Don't include 0, it looks the same as o or O
-    	newPassword = injectCharacters(newPassword, possibleNumbers);
+        //Generate the starter password, then replace individual characters if they decide to later.        
+        for( var i=0; i < chosenLength; i++ ){
+            newPassword += possibleCharacters.charAt(Math.floor(Math.random() * possibleCharacters.length));
+        }
+        //Add some numbers
+        var possibleNumbers = "123456789"; //Don't include 0, it looks the same as o or O
+        newPassword = injectCharacters(newPassword, possibleNumbers);
 
-		// var randomnumber=Math.floor(Math.random()*11);
-		//Check options boxes		
-		if ($("#uppercase").prop('checked')){
-			possibleCharacters = "ABCDEFGHIJLKMNPQRSTUVWXYZ";
-			newPassword = injectCharacters(newPassword, possibleCharacters);
-		}
+        // var randomnumber=Math.floor(Math.random()*11);
+        //Check options boxes       
+        if ($("#uppercase").prop('checked')){
+            possibleCharacters = "ABCDEFGHIJLKMNPQRSTUVWXYZ";
+            newPassword = injectCharacters(newPassword, possibleCharacters);
+        }
 
-		if ($("#symbols").prop('checked')){
-			//possibleCharacters = ["!$%^&*()-_=+[{]};:@#~|,<.>/?"];
-			possibleCharacters = "!$%^&*()-_=+[{]};:@#~|,<.>?";
-			newPassword = injectCharacters(newPassword, possibleCharacters);	
-		}
-
-
+        if ($("#symbols").prop('checked')){
+            //possibleCharacters = ["!$%^&*()-_=+[{]};:@#~|,<.>/?"];
+            possibleCharacters = "!$%^&*()-_=+[{]};:@#~|,<.>?";
+            newPassword = injectCharacters(newPassword, possibleCharacters);    
+        }
 
 
 
-		passwordDisplay.text(newPassword); //display the password to the user!
+
+
+        passwordDisplay.text(newPassword); //display the password to the user!
         passwordDisplay.css("color", "#666666");
         //Change the data-clipboard-text to the new password so ZeroClipboard can pick it up.
         passwordDisplay.attr('data-clipboard-text', newPassword); 
 
         clickToCopyP.text("Click the password to copy to clipboard.");
         clickToCopyP.removeClass("copied");        
-	}	
+    }   
 
 /*-----------------------------------------------------------------
 *  Show or Hide the 'Options' Panel
 * ----------------------------------------------------------------*/
-	function showHideOptions(){
-		var optionsDiv = $("div.options");
-		var optionsLink = $("a.options-arrow");
-		if ($("div.options").is(":visible")){
-			optionsDiv.slideUp();
-			optionsLink.removeClass("options-arrow-up");
-			optionsLink.addClass("options-arrow-down");
-			
-		} else {
-			optionsDiv.slideDown();
-			optionsLink.removeClass("options-arrow-down");
-			optionsLink.addClass("options-arrow-up");
-		}
-	}
+    function showHideOptions(){
+        var optionsDiv = $("div.options");
+        var optionsLink = $("a.options-arrow");
+        if ($("div.options").is(":visible")){
+            optionsDiv.slideUp();
+            optionsLink.removeClass("options-arrow-up");
+            optionsLink.addClass("options-arrow-down");
+            
+        } else {
+            optionsDiv.slideDown();
+            optionsLink.removeClass("options-arrow-down");
+            optionsLink.addClass("options-arrow-up");
+        }
+    }
 
 /*-----------------------------------------------------------------
 *  Make it so when someone clicks on the password, it selects it.
@@ -149,11 +149,11 @@ clip.on( 'complete', function(client, args) {
 Hooking up function to frontend
 ===================================================================== */
 
-	var passwordDisplay = $("h1.password-display"); //This is where the password is output to the user
-	var btnGenerate = $("a.btn-generate");
-	var btnShowHideOptions = $("p.options-link a");
+    var passwordDisplay = $("h1.password-display"); //This is where the password is output to the user
+    var btnGenerate = $("a.btn-generate");
+    var btnShowHideOptions = $("p.options-link a");
     var clickToCopyP = $("p.click-to-copy");
-	GeneratePassword(); //run it by default the first time
+    GeneratePassword(); //run it by default the first time
     btnGenerate.on('click', GeneratePassword);
     btnShowHideOptions.on('click', showHideOptions);
 
