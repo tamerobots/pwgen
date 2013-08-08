@@ -98,7 +98,7 @@ Password Generation Function
         //Change the data-clipboard-text to the new password so ZeroClipboard can pick it up.
         passwordDisplay.attr('data-clipboard-text', newPassword); 
 
-        clickToCopyP.text("Click to copy to clipboard.");
+        clickToCopyP.text("Click the password to copy to clipboard.");
         clickToCopyP.removeClass("copied");        
 	}	
 
