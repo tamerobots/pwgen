@@ -342,6 +342,11 @@ h1.muted{
     font-size:160%;
 }
 
+h1.password-display{
+    padding: 40px 0px 40px 0px;
+    margin:0px;
+}
+
 /* main page width */
 .container-narrow {    
     margin: 0 auto;
@@ -353,6 +358,10 @@ h1.muted{
     padding: 10px 10px 0px 10px;
     width:65%;
     display:block;
+}
+
+p.click-to-copy{
+    margin-top:1.2em;
 }
 
 p.copied{

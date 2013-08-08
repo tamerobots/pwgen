@@ -97,7 +97,7 @@ Password Generation Function
         passwordDisplay.css("color", "#666666");
         //Change the data-clipboard-text to the new password so ZeroClipboard can pick it up.
         passwordDisplay.attr('data-clipboard-text', newPassword); 
-        
+
         clickToCopyP.text("Click to copy to clipboard.");
         clickToCopyP.removeClass("copied");        
 	}	
@@ -138,8 +138,8 @@ var clip = new ZeroClipboard( document.getElementById("password-display"), {
 } );
 
 clip.on( 'complete', function(client, args) {
-        passwordDisplay.animate({color: '#5BB75B'}, 100);
-        passwordDisplay.animate({color: '#93B2C2'}, 100);
+        passwordDisplay.animate({backgroundColor: '#5BB75B', color: '#FFFFFF'}, 200);
+        passwordDisplay.animate({backgroundColor: '#FFFFFF', color: '#93B2C2'}, 400);
         clickToCopyP.text("Copied.");
         clickToCopyP.addClass("copied");
     }  
