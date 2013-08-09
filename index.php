@@ -34,13 +34,13 @@
       
       <div class="options">
         <form id="options-form" >
-          <p><input type="checkbox" name="uppercase" id="uppercase" ><label for="uppercase">Enable Uppercase Letters</label></input></p>
+          <p><input type="checkbox" name="uppercase" id="uppercase" class="options_input" ><label for="uppercase">Enable Uppercase Letters</label></input></p>
 
-          <p><input type="checkbox" name="symbols" id="symbols" ><label for="symbols">Enable Symbols</label></input></p>
+          <p><input type="checkbox" name="symbols" id="symbols" class="options_input" ><label for="symbols">Enable Symbols</label></input></p>
 
           <!-- <p><input type="text" name="length" id="length" value="10">Length</input></p> -->
           <p>
-            <select name="length" id="length">
+            <select class="options_input" name="length" id="length">
               <optgroup label="Too Short">
                 <option value="8">8</option>
                 <option value="9">9</option>
@@ -61,8 +61,8 @@
             </select>
             <label for="length">Password Length</label>
           </p>
-          <p>
-            Box for copying short url with querystring parameters here.
+          <p class="password-url">
+          <a class="password-url-link" href="#">link here</a>
           </p>
           </form>
           <hr>

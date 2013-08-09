@@ -3,6 +3,7 @@ Password Generator by tamerobots.com.
 ===================================================================== */
 
 //Javascript to be able to select text easy - note this is not JQuery.
+// this is no longer used as the ZeroClipboard is in use, but is kept in case someone does not use flash.
 function SelectText(element) {
     var doc = document
         , text = doc.getElementById(element)
@@ -21,9 +22,12 @@ function SelectText(element) {
     }
 }
 
+
+
 /* JQUERY STARTS HERE AND CONTINUES TO END ---------------------------------------------------------------------------------------------- */
 
 jQuery(function($){    
+
 
 /*-----------------------------------------------------------------
 *  A character replace function. used in 'injectCharacters'
@@ -60,13 +64,29 @@ function getURLParameter(name) {
     );
 }
 
+function generateURLtoCopy(chosenLength, uppercase, symbols){
+    var url = (window.location.href.split('?')[0]);
+
+    url = url + "?chosenLength=" + chosenLength; //chosenLength will always be chosen or will default so safe to use.
+
+    if (uppercase){
+        url = url + "&uppercase=1";
+    }
+    if (symbols){
+        url = url + "&symbols=1";
+    }
+
+    return url;
+}
+
+
 /* =====================================================================
 Password Generation Function
 ===================================================================== */
 
     function GeneratePassword(){
         var newPassword = "";
-        var chosenLength = 10; //Default to 10 chars                
+        var chosenLength = 12; //Default to 12 chars                
         var possibleCharacters = "abcdefghijkmnpqrstuvwxyz"; // leave 'o and l out as they look the same as 1 and 0             
 
         //Get potential parameters from URL, if this is the first time this is running----------------
@@ -145,6 +165,12 @@ Password Generation Function
         clickToCopyP.removeClass("copied");        
         //Set this here, so that after the first time generatepassword is run, it never tries to find get params again.
         useGETParameters = false; 
+        var url = generateURLtoCopy(chosenLength, $("#uppercase").prop('checked'), $("#symbols").prop('checked'));
+        $("a.password-url-link").attr({
+            href: url,
+            text: url            
+        });
+
     }   
 
 /*-----------------------------------------------------------------
@@ -198,12 +224,22 @@ Hooking up function to frontend
     var btnGenerate = $("a.btn-generate");
     var btnShowHideOptions = $("p.options-link a");
     var clickToCopyP = $("p.click-to-copy");
+    var optionsInputs = $(".options_input");
     //Only use GET parameters the first time you load page (i.e. first time you run), then the user can override these
     //in 'options' panel.
     var useGETParameters = true; 
     GeneratePassword(); //run it by default the first time
     btnGenerate.on('click', GeneratePassword);
     btnShowHideOptions.on('click', showHideOptions);
+    // optionsInputs.on('mouseleave', function(){
+
+    //     var url = generateURLtoCopy(10, $("#uppercase").prop('checked'), $("#symbols").prop('checked'));
+    //     $("a.password-url-link").attr({
+    //             href: url,
+    //             text: url            
+    //     }
+    // }));
+
 
 
 }) /* EOF */
