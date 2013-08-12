@@ -61,7 +61,7 @@
             </select>
             <label for="length">Password Length</label>
           </p>
-          <p class="password-url">
+          <p class="password-url"> You can save these settings by bookmarking this URL:
           <a class="password-url-link" href="#">link here</a>
           </p>
           </form>

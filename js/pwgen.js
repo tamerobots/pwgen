@@ -233,7 +233,7 @@ jQuery(function ($) {
     btnGenerate.on('click', GeneratePassword);
     btnShowHideOptions.on('click', showHideOptions);
     //Make it so that every time their mouse leaves an input button, the new URL to copy is changed
-    optionsInputs.on('mouseleave', function () {
+    optionsInputs.on('click', function () {
 
         var url = generateURLtoCopy($("#length").val(), $("#uppercase").prop('checked'), $("#symbols").prop('checked'));
         $("a.password-url-link").attr("href", url);
