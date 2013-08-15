@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Password Generator | TameRobots</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Password Generator by tamerobots.com">
+  <meta name="author" content="TameRobots">
+
+  <!-- Le styles -->
+  <link href="css/pwgen.css" rel="stylesheet">    
+
+</head>
+
+<body>
+
+  <div class="container-narrow">
+
+    <div class="masthead">
+      <h1 class="muted">Password Generator</h1>
+    </div>
+
+    <hr>
+
+    <div class="password-generate-panel">
+
+      <div class="generate-main">
+        <h1 id="password-display" data-clipboard-text="Copy me" class="password-display">Password Here</h1>
+        <p class="click-to-copy">Click the password to copy to clipboard.</p>
+        <a class="btn btn-large btn-generate">Generate!</a>
+        <p class="options-link"><a class="options-arrow options-arrow-down">Options</a></p>
+      </div>
+
+      <hr>
+
+      
+      <div class="options">
+        <form id="options-form" >
+          <p><input type="checkbox" name="uppercase" id="uppercase" class="options_input" ><label for="uppercase">Enable Uppercase Letters</label></input></p>
+
+          <p><input type="checkbox" name="symbols" id="symbols" class="options_input" ><label for="symbols">Enable Symbols</label></input></p>
+
+          <!-- <p><input type="text" name="length" id="length" value="10">Length</input></p> -->
+          <p>
+            <select class="options_input" name="length" id="length">
+              <optgroup label="Too Short">
+                <option value="8">8</option>
+                <option value="9">9</option>
+              </optgroup>
+              <optgroup label="Recommended">
+                <option value="10" >10</option>              
+                <option value="11">11</option>
+                <option value="12" selected="selected">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+              </optgroup>
+            </select>
+            <label for="length">Password Length</label>
+          </p>
+          <p class="password-url"> You can save these settings by bookmarking this URL:<br/>
+            <a class="password-url-link" href="#">link here</a>
+          </p>
+        </form>
+        <hr>
+      </div>
+    </div>
+
+    <div class="about-panel">
+      <p>
+        <h2>About</h2>
+        <h4>Is this secure?</h4>
+        Yes, the password is generated in your browser using Javascript, so is not sent across the internet. I recommend using a password manager such as <a href="http://keepass.info/">KeePass</a> to store your passwords.
+        <h4>How strong does my password need to be?</h4>
+        Your password should be as long and as complex as possible. It should be:
+        <ul>
+          <li>at least <b>16 characters long</b></li>
+          <li>a combination of <b>uppercase</b> and <b>lowercase</b> characters</li>
+          <li>has <strong>numbers</strong></li>
+          <li>has <strong>symbols</strong></li>
+          <li>is <strong>unique</strong> - never use the same password twice</li>
+          <li>is <strong>not based on your personal information</strong> - it should not be your name, your friends name, your pets name, your car, your favourite sports team</li>
+          <li>is <strong>not a single dictionary word</strong> like 'flannel' or 'catch'</li>
+        </ul>
+        Here's <a href="https://accounts.google.com/PasswordHelp">Google's guide to strong passwords</a> for reference.
+        <h4>Can I save my preferences?</h4>
+        Sure - if you'd like the site to load your preferences every time you open it up, then bookmark the URL at the bottom of the 'Options' panel. Then when you click the bookmark, it will remember the options you set. This is based on querystring parameters - you will notice the URL changes a little every time you change an option. Again, this is secure - the password itself is never transmitted across the internet.
+        <h4>Can I modify this and make my own version?</h4>
+        Sure! <a href="https://github.com/tamerobots/pwgen">Fork me on Github</a>.
+      </p>
+    </div>
+    
+    <div class="footer">
+      <div class="footer-disclaimer">We are not responsible for any loss of data or personal information. Passwords are used at the user’s own risk and no liability will be assumed. By using this website, you agree that the website and its authors are not liable for any losses incurred. tamerobots.com and its authors are not responsible or liable, directly or indirectly, for any damage or loss caused by or in connection with the use of, or reliance on, any such content, goods or services available on or through this website.
+      </div>
+      <div class="footer-links"><a href="/pwgen">Home</a> | <a class="about-dialog-link" href="#">About</a> | <a href="/contact">Give Feedback</a></div>
+
+
+    </div>
+
+  </div> <!-- /container -->
+
+
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+  <script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
+  <script type="text/javascript" src="ZeroClipboard/ZeroClipboard.js"></script>
+  <script type="text/javascript" src="js/pwgen.js"></script>
+
+
+</body>
+</html>

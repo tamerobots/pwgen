@@ -84,7 +84,7 @@ a.section-link
     display: block;
     padding: 0.5em 0;
     padding-left: 10px;
-    background: url("images/arr_red.png") no-repeat left center;
+    background: url("../img/arr_red.png") no-repeat left center;
     font-size: 0.8571em; /*12 / 14 */
     text-transform: uppercase;
     color: #10224f;
@@ -161,7 +161,7 @@ ul
     margin: 1em 0;
     padding: 0 0 0 25px;
     list-style: none;
-    list-style-image: url("images/bullet.png");
+    list-style-image: url("../img/bullet.png");
 }
 li 
 {
@@ -352,10 +352,15 @@ h1.password-display{
     margin: 0 auto;
     width: 80%;
 }
+
+.about-panel{
+    display:none;
+}
+
 .generate-main{
     text-align: center;
     margin: 0 auto;
-    padding: 10px 10px 0px 10px;
+    padding: 0px 10px 0px 10px;
     width:65%;
     display:block;
 }
@@ -417,7 +422,8 @@ a.btn-generate::-webkit-selection {
 }
 
 p.options-link{
-    padding-top: 40px;
+    padding: 1.2em 0 1.2em 0;
+    margin-bottom:0px;
 }
 .options-link a{
     padding: 0px 40px 0px 15px;
@@ -436,4 +442,24 @@ p.options-link{
 
 div.options{
     display:none; /* Start with the options div NOT open.*/
+}
+
+label {
+    padding-left: 10px;
+}
+
+input{
+    margin-top:5px;
+}
+.footer-disclaimer{
+    font-size:10px;
+    line-height: 1em;
+}
+
+.footer-links{
+    padding-top:10px;
+}
+
+.about-dialog{
+    display:none;
 }

@@ -219,6 +219,15 @@ jQuery(function ($) {
     });
 
     /*-----------------------------------------------------------------
+    * 'About' pane show
+    * ----------------------------------------------------------------*/
+
+    $('.about-dialog-link').on('click', function(){
+        $('.password-generate-panel').hide();
+        $('.about-panel').show();
+    });
+
+    /*-----------------------------------------------------------------
     *  Hooking up function to frontend
     * ----------------------------------------------------------------*/
     var passwordDisplay = $("h1.password-display"); //This is where the password is output to the user
