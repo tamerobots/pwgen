@@ -219,12 +219,17 @@ jQuery(function ($) {
     });
 
     /*-----------------------------------------------------------------
-    * 'About' pane show
+    * 'About' and 'Password Generator' pane show
     * ----------------------------------------------------------------*/
 
     $('.about-dialog-link').on('click', function(){
         $('.password-generate-panel').hide();
         $('.about-panel').show();
+    });
+
+    $('.home-link').on('click', function(){
+        $('.about-panel').hide();
+        $('.password-generate-panel').show();
     });
 
     /*-----------------------------------------------------------------
