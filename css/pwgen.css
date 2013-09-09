@@ -1,4 +1,3 @@
-
 /* =============================================================================
    HTML5 Boilerplate CSS: h5bp.com/css
    ========================================================================== */
@@ -349,7 +348,7 @@ h1.password-display{
 /* main page width */
 .container-narrow {    
     margin: 0 auto;
-    width: 80%;
+    width: 83%;
 }
 
 .about-panel{
@@ -456,7 +455,9 @@ input{
 }
 
 .footer-links{
-    padding-top:10px;
+    margin: 0 auto;
+    padding-top: 10px;
+    text-align: center;
 }
 
 .about-dialog{
