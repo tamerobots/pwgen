@@ -340,9 +340,12 @@ h1.muted{
     font-size:160%;
 }
 
-h1.password-display{
+p.password-display{
     padding: 40px 0px 40px 0px;
-    margin:0px;
+    margin: 0px;
+    word-wrap:break-word;
+    font-size: 210%;
+    line-height: 1em;
 }
 
 /* main page width */
@@ -359,12 +362,13 @@ h1.password-display{
     text-align: center;
     margin: 0 auto;
     padding: 0px 10px 0px 10px;
-    width:65%;
+    width:95%;
     display:block;
 }
 
 p.click-to-copy{
     margin-top:1.2em;
+    display:none;
 }
 
 p.copied{
@@ -436,6 +440,10 @@ p.options-link{
 }
 .options-arrow-up{
     background: url("../img/greyup.png") no-repeat scroll right 9px transparent;
+}
+
+#length{
+    width:150px;
 }
 
 div.options{

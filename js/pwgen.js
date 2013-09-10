@@ -159,7 +159,7 @@ jQuery(function ($) {
         //Change the data-clipboard-text to the new password so ZeroClipboard can pick it up.
         passwordDisplay.attr('data-clipboard-text', newPassword);
 
-        clickToCopyP.text("Click the password to copy to clipboard.");
+        clickToCopyP.text("Click the password to copy to clipboard (Requires Flash).");
         clickToCopyP.removeClass("copied");
         //Set this here, so that after the first time generatepassword is run, it never tries to find get params again.
         useGETParameters = false;
@@ -191,7 +191,7 @@ jQuery(function ($) {
     /*-----------------------------------------------------------------
      *  Make it so when someone clicks on the password, it selects it.
      * ----------------------------------------------------------------*/
-    $('h1.password-display').click(function () {
+    $('.password-display').click(function () {
         SelectText('password-display');
     });
 
@@ -203,6 +203,10 @@ jQuery(function ($) {
     var clip = new ZeroClipboard(document.getElementById("password-display"), {
         moviePath: "ZeroClipboard/ZeroClipboard.swf",
         allowScriptAccess: "sameDomain"
+    });
+
+    clip.on("load", function (client) {
+        $('.click-to-copy').show();
     });
 
     clip.on('complete', function (client, args) {
@@ -235,7 +239,7 @@ jQuery(function ($) {
     /*-----------------------------------------------------------------
     *  Hooking up function to frontend
     * ----------------------------------------------------------------*/
-    var passwordDisplay = $("h1.password-display"); //This is where the password is output to the user
+    var passwordDisplay = $(".password-display"); //This is where the password is output to the user
     var btnGenerate = $("a.btn-generate");
     var btnShowHideOptions = $("p.options-link a");
     var clickToCopyP = $("p.click-to-copy");
