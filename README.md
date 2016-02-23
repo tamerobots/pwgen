@@ -5,6 +5,10 @@ Password Generator site by TameRobots (tamerobots.com)
 
 Uses Jquery, Jquery UI, ZeroClipboard, HTML, CSS.
 
+See a version in action here: www.tamerobots.com/project/pwgen
+
+USE AT YOUR OWN RISK - I have not done a full security audit on it, and it's really a work in progress.
+
 Includes Options:
 
 $ Use upper case letters
@@ -12,6 +16,10 @@ $ Use symbols
 $ Choose number of characters
 
 Suggested future functionality:
+
+$ HTTPS!
+
+$ crypto hashes of latest builds
 
 $ Optimise for facebook/twitter.
 
