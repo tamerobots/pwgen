@@ -1,5 +1,5 @@
 /* =====================================================================
-Password Generator by tamerobots.com. 
+Password Generator by tamerobots.com.
 ===================================================================== */
 //Javascript to be able to select text easy - note this is not JQuery.
 // this is no longer used as the ZeroClipboard is in use, but is kept in case someone does not use flash.
@@ -86,8 +86,8 @@ jQuery(function ($) {
 
     function GeneratePassword() {
         var newPassword = "";
-        var chosenLength = 12; //Default to 12 chars                
-        var possibleCharacters = "abcdefghijkmnpqrstuvwxyz"; // leave 'o and l out as they look the same as 1 and 0             
+        var chosenLength = 12; //Default to 12 chars
+        var possibleCharacters = "abcdefghijkmnpqrstuvwxyz"; // leave 'o and l out as they look the same as 1 and 0
 
         //Get potential parameters from URL, if this is the first time this is running----------------
         if (useGETParameters) {
@@ -133,7 +133,7 @@ jQuery(function ($) {
             }
         }
 
-        //Generate the starter password, then replace individual characters if they decide to later.        
+        //Generate the starter password, then replace individual characters if they decide to later.
         for (var i = 0; i < chosenLength; i++) {
             newPassword += possibleCharacters.charAt(Math.floor(Math.random() * possibleCharacters.length));
         }
@@ -141,7 +141,7 @@ jQuery(function ($) {
         var possibleNumbers = "123456789"; //Don't include 0, it looks the same as o or O
         newPassword = injectCharacters(newPassword, possibleNumbers);
 
-        //Check options boxes       
+        //Check options boxes
         if ($("#uppercase").prop('checked')) {
             possibleCharacters = "ABCDEFGHIJLKMNPQRSTUVWXYZ";
             newPassword = injectCharacters(newPassword, possibleCharacters);
@@ -152,7 +152,7 @@ jQuery(function ($) {
             newPassword = injectCharacters(newPassword, possibleCharacters);
         }
 
-        //Could have extra password generation rules here. 
+        //Could have extra password generation rules here.
 
         passwordDisplay.text(newPassword); //display the password to the user!
         passwordDisplay.css("color", "#666666");

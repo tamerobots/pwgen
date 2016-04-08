@@ -7,7 +7,8 @@ Uses Jquery, Jquery UI, ZeroClipboard, HTML, CSS.
 
 See a version in action here: www.tamerobots.com/project/pwgen
 
-USE AT YOUR OWN RISK - I have not done a full security audit on it, and it's really a work in progress.
+USE AT YOUR OWN RISK - I have not done a full security audit on it, and it's really a work in progress. There are better, more secure options out there for generating passwords, and 
+a browser is not necessarily a great place to do this anyway.
 
 Includes Options:
 
@@ -17,11 +18,13 @@ $ Choose number of characters
 
 Suggested future functionality:
 
+$ move away from using Math.random() its not a good enough random number generator
+
+$ Remove the need for jQuery and other libraries that need updating/checks for compatibility
+
 $ HTTPS!
 
 $ crypto hashes of latest builds
-
-$ Optimise for facebook/twitter.
 
 $ xkcd-style passwords? (http://xkcd.com/936/)
 
@@ -29,7 +32,7 @@ $ Box for entering a word to build a password around.
 
 $ Comments section
 
-$ Keyboard press to generate new password
+$ Keyboard shortcut to generate new password
 
 $ App?
 
